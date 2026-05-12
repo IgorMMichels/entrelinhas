@@ -1,9 +1,10 @@
 @font-face {
-  font-family: "Moder Demo";
+  font-family: 'Moder Demo';
   src: url(/src/assets/fonts/TBJ-Moder-Demo.ttf);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 
 *,
 *::before,
@@ -11,25 +12,23 @@
   box-sizing: border-box;
   margin: 0;
   font-weight: normal;
+  text-decoration: none;
+  list-style-type: none;
+  background-color: #fdf9f4;
+}
+
+a, h1, h2, h3, h4, p, input, label {
+  color: #20201d;
 }
 
 div {
   border-radius: 12px;
 }
-
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
   line-height: 1.6;
-  font-family:
-    "Moder Demo",
-    "Poppins",
-    sans-serif;
-  font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

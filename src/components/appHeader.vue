@@ -1,11 +1,53 @@
-<script setup></script>
+<script setup>
+import { HugeiconsIcon } from '@hugeicons/vue'
+import { FavouriteIcon, Notification03Icon, SearchingIcon, ShoppingCart02Icon, UserIcon } from '@hugeicons/core-free-icons'
+</script>
 
 <template>
   <header>
-      <img src="/public/favicon.ico" alt="icon" />
-      <h1>Entrelinhas</h1>
-    <div></div>
+    <div>
+      <img @click="$router.push('/')" src="/public/entrelinhas.png" alt="icon" />
+    </div>
+    <div>
+      <label>
+        <input type="text" v-model="pesquisa" placeholder="Pesquisar" />
+      </label>
+    </div>
+    <div>
+      <nav>
+        <RouterLink to="/">Termos</RouterLink>
+        <RouterLink to="/">Equipe</RouterLink>
+        <RouterLink to="/">Envio</RouterLink>
+        <RouterLink to="/">Devoluções</RouterLink>
+      </nav>
+    </div>
+    <div class="iconTools">
+      <HugeiconsIcon :icon="ShoppingCart02Icon" color="#cdb185" />
+      <HugeiconsIcon :icon="FavouriteIcon" color="#cdb185"/>
+      <HugeiconsIcon :icon="UserIcon" color="#cdb185"/>
+    </div>
   </header>
 </template>
 
-<style scoped></style>
+<style scoped>
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 5rem;
+}
+
+header nav {
+  display: flex;
+  gap: 16px;
+}
+
+img {
+  width: 100px;
+}
+
+.iconTools {
+  display: flex;
+  gap: 16px;
+}
+
+</style>
