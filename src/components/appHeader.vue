@@ -6,7 +6,7 @@ import { FavouriteIcon, Notification03Icon, SearchingIcon, ShoppingCart02Icon, U
 <template>
   <header>
     <div>
-      <img @click="$router.push('/')" src="/public/entrelinhas.png" alt="icon" />
+      <img @click="$router.push('/')" src="/entrelinhas.png" alt="icon" />
     </div>
     <div>
       <label>
@@ -22,7 +22,7 @@ import { FavouriteIcon, Notification03Icon, SearchingIcon, ShoppingCart02Icon, U
       </nav>
     </div>
     <div class="iconTools">
-      <HugeiconsIcon :icon="ShoppingCart02Icon" color="#cdb185" />
+      <HugeiconsIcon @click="router.push('/carrinho')" :icon="ShoppingCart02Icon" color="#cdb185" />
       <HugeiconsIcon :icon="FavouriteIcon" color="#cdb185"/>
       <HugeiconsIcon :icon="UserIcon" color="#cdb185"/>
     </div>
