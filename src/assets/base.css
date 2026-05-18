@@ -4,6 +4,7 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
 
 
 *,
@@ -14,7 +15,7 @@
   font-weight: normal;
   text-decoration: none;
   list-style-type: none;
-  background-color: #fdf9f4;
+  background-color: #F5F1EC;
 }
 
 a, h1, h2, h3, h4, p, input, label {
