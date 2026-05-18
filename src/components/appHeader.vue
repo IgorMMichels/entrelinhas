@@ -1,17 +1,16 @@
 <script setup>
 import { HugeiconsIcon } from '@hugeicons/vue'
 import { FavouriteIcon, Notification03Icon, SearchingIcon, ShoppingCart02Icon, UserIcon } from '@hugeicons/core-free-icons'
+import InputSearch from './ui/input/InputSearch.vue';
 </script>
 
 <template>
   <header>
     <div>
-      <img @click="$router.push('/')" src="/entrelinhas.png" alt="icon" />
+      <img @click="$router.push('/')" src="/logoentrelinhas.png" alt="icon" />
     </div>
     <div>
-      <label>
-        <input type="text" v-model="pesquisa" placeholder="Pesquisar" />
-      </label>
+      <InputSearch></InputSearch>
     </div>
     <div>
       <nav>
