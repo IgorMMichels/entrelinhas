@@ -1,7 +1,13 @@
 <script setup>
 import { HugeiconsIcon } from '@hugeicons/vue'
-import { FavouriteIcon, Notification03Icon, SearchingIcon, ShoppingCart02Icon, UserIcon } from '@hugeicons/core-free-icons'
-import InputSearch from './ui/input/InputSearch.vue';
+import {
+  FavouriteIcon,
+  Notification03Icon,
+  SearchingIcon,
+  ShoppingCart02Icon,
+  UserIcon,
+} from '@hugeicons/core-free-icons'
+import InputSearch from './ui/input/InputSearch.vue'
 </script>
 
 <template>
@@ -10,7 +16,7 @@ import InputSearch from './ui/input/InputSearch.vue';
       <img @click="$router.push('/')" src="/logoentrelinhas.png" alt="icon" />
     </div>
     <div>
-      <InputSearch></InputSearch>
+      <InputSearch type="text" placeholder="Pesquisar"></InputSearch>
     </div>
     <div>
       <nav>
@@ -21,18 +27,28 @@ import InputSearch from './ui/input/InputSearch.vue';
       </nav>
     </div>
     <div class="iconTools">
-      <HugeiconsIcon @click="router.push('/carrinho')" :icon="ShoppingCart02Icon" color="#cdb185" />
-      <HugeiconsIcon :icon="FavouriteIcon" color="#cdb185"/>
-      <HugeiconsIcon :icon="UserIcon" color="#cdb185"/>
+      <router-link to="/carrinho">
+        <HugeiconsIcon :icon="ShoppingCart02Icon" color="#4b0001" style="cursor: pointer" />
+      </router-link>
+      <router-link to="/carrinho">
+        <HugeiconsIcon :icon="FavouriteIcon" color="#4b0001" style="cursor: pointer" />
+      </router-link>
+      <router-link to="/carrinho">
+        <HugeiconsIcon :icon="UserIcon" color="#4b0001" style="cursor: pointer" />
+      </router-link>
     </div>
   </header>
 </template>
 
 <style scoped>
+a {
+  color: #4b0001;
+}
 header {
   display: flex;
   justify-content: space-between;
-  margin: 2rem 5rem;
+  align-items: center;
+  margin: 0 5rem 2rem 5rem;
 }
 
 header nav {
@@ -48,5 +64,4 @@ img {
   display: flex;
   gap: 16px;
 }
-
 </style>

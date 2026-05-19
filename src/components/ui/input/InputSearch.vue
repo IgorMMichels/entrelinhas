@@ -1,6 +1,9 @@
 <script setup>
 import { useVModel } from "@vueuse/core";
 import { cn } from "@/lib/utils";
+import { HugeiconsIcon } from '@hugeicons/vue';
+
+import { SearchingIcon } from "@hugeicons/core-free-icons";
 
 const props = defineProps({
   defaultValue: { type: [String, Number], required: false },
