@@ -2,12 +2,13 @@
 import { HugeiconsIcon } from '@hugeicons/vue'
 import {
   FavouriteIcon,
-  Notification03Icon,
-  SearchingIcon,
   ShoppingCart02Icon,
   UserIcon,
 } from '@hugeicons/core-free-icons'
-import InputSearch from './ui/input/InputSearch.vue'
+import { Button } from '@/components/ui/button'
+import { ButtonGroup } from '@/components/ui/button-group'
+import { Input } from '@/components/ui/input'
+import { SearchIcon } from 'lucide-vue-next'
 </script>
 
 <template>
@@ -16,7 +17,12 @@ import InputSearch from './ui/input/InputSearch.vue'
       <img @click="$router.push('/')" src="/logoentrelinhas.png" alt="icon" />
     </div>
     <div>
-      <InputSearch type="text" placeholder="Pesquisar"></InputSearch>
+      <ButtonGroup>
+        <Input placeholder="Pesquisar" />
+        <Button variant="outline" class='bg-background' aria-label="Search">
+          <SearchIcon color="#4b0001" />
+        </Button>
+      </ButtonGroup>
     </div>
     <div>
       <nav>
@@ -44,6 +50,10 @@ import InputSearch from './ui/input/InputSearch.vue'
 a {
   color: #4b0001;
 }
+
+input {
+  width: 400px;
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -58,10 +68,15 @@ header nav {
 
 img {
   width: 100px;
+  cursor: pointer;
 }
 
 .iconTools {
   display: flex;
   gap: 16px;
+}
+
+button {
+  background-color: #fbf5f0;
 }
 </style>

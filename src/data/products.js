@@ -1,7 +1,7 @@
 const produtos = [
   {
     "id": 1,
-    "titulo": " Harry Potter e a Pedra Filosofal ",
+    "titulo": "Harry Potter e a Pedra Filosofal",
     "autor": "J.K. Rowling",
     "resenha": "Livro clássico de fantasia que introduz um universo mágico e atemporal, narrando o amadurecimento de um jovem bruxo e sua luta contra as forças das trevas.",
     "preco": 69.90,
@@ -13,7 +13,7 @@ const produtos = [
     "autor": "J.K. Rowling",
     "resenha": "Segundo livro da saga que expande o universo mágico, combinando mistério escolar, preconceito no mundo bruxo e a descoberta de segredos sombrios do passado de Hogwarts.",
     "preco": 69.90,
-    "capa": "https://a-static.mlcdn.com.br/%7Bw%7Dx%7Bh%7D/livro-harry-potter-e-a-camara-secretas-capa-dura-edicao-comemorativa-dos-20-anos-da-colecao-harry-potter/magazineluiza/225550000/82b6af40e5078ec116a26f58ba309185.jpg"
+    "capa": "https://dvxg5do6xbhsu.cloudfront.net/Custom/Content/Products/51/11/5111363_harry-potter-e-a-camara-secreta-capa-dura-edicao-comemorativa-dos-20-anos-da-colecao-harry-potter-127539_z1_638109449015500732.webp"
   },
   {
     "id": 3,
@@ -54,14 +54,6 @@ const produtos = [
     "resenha": "Conclusão da trilogia repleta de reviravoltas, exílio e estratégias militares, onde a protagonista precisa reivindicar seu lugar por direito e salvar o reino das fadas da destruição total.",
     "preco": 59.90,
     "capa": "https://m.media-amazon.com/images/I/911VeZWLwTL._UF1000,1000_QL80_.jpg"
-  },
-  {
-    "id": 8,
-    "titulo": "O Canto Mais Escuro da Floresta",
-    "autor": "Holly Black",
-    "resenha": "Fantasia urbana sombria que mistura folclore celta e romance, onde dois irmãos tentam quebrar uma maldição ancestral em uma cidadezinha cercada por fadas perigosas.",
-    "preco": 59.90,
-    "capa": "https://m.media-amazon.com/images/I/910MCHGXJcL.jpg"
   },
    {
     "id": 8,
