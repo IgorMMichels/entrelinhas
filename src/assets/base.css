@@ -6,6 +6,11 @@
   src: url(/src/assets/fonts/TBJ-Moder-Demo.ttf);
 }
 
+@font-face {
+  font-family: 'Reverie';
+  src: url(/src/assets/fonts/REVERIE.otf);
+}
+
 
 *,
 *::before,
@@ -15,11 +20,11 @@
   font-weight: normal;
   text-decoration: none;
   list-style-type: none;
-  background-color: #faf4f0;
 }
 
-a, h1, h2, h3, h4, p, input, label {
-  color: #20201d;
+
+body   {
+    background-color: #faf4f0;
 }
 
 div {
