@@ -1,5 +1,6 @@
 <script setup lang="ts">
-  import cartItem from './cartItem.vue';
+import cartItem from './cartItem.vue'
+import CartSummary from './cartSummary.vue'
 </script>
 
 <template>
@@ -12,22 +13,14 @@
       </div>
       <cartItem></cartItem>
     </div>
-    <div class='summary bg-background'>
-      <h3>Total da Compra</h3>
-
-    </div>
+    <CartSummary/>
   </div>
 </template>
 
 <style scoped>
-  .panel {
-    padding: 1rem 5rem;
-    margin: auto 5rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
-
-  .summary {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 2rem 5rem;
-  }
+.panel {
+  padding: 1rem 5rem;
+  margin: auto 5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 </style>

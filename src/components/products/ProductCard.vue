@@ -5,6 +5,7 @@ defineProps(['id', 'autor', 'titulo', 'resenha', 'preco', 'capa'])
 import { HugeiconsIcon } from '@hugeicons/vue'
 import { Heart } from '@hugeicons/core-free-icons'
 import { formataPreco } from '@/utils/currencyUtils'
+defineEmits(['adicionarCarrinho'])
 </script>
 
 <template>
@@ -22,7 +23,7 @@ import { formataPreco } from '@/utils/currencyUtils'
       </div>
       <h4 class='price'>{{ formataPreco(preco) }}</h4>
       <h3> {{ resenha }} </h3>
-      <Button variant="outline" class="w-full"> Adicionar ao carrinho </Button>
+      <Button variant="outline" class="w-full" @click="$emit('adicionarCarrinho')">Adicionar ao carrinho</Button>
     </div>
   </Card>
 </template>
