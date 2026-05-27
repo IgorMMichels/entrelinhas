@@ -2,9 +2,8 @@
 import { ref } from 'vue'
 import ProductCard from './ProductCard.vue'
 import produtos from '@/data/products'
-import { addCarrinho, carrinho } from '@/utils/cartUtils'
+import { addCarrinho } from '@/utils/cartUtils'
 const listaProdutos = ref(produtos)
-const listaCarrinho = ref(carrinho)
 </script>
 
 <template>

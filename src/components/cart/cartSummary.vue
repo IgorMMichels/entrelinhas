@@ -1,16 +1,22 @@
 <script setup lang="ts">
-import { carrinho } from '@/utils/cartUtils'
 import { ref } from 'vue'
 import Button from '../ui/button/Button.vue';
-const carrinhos = ref(carrinho)
+import { valorAltera } from '@/utils/cartUtils';
+import { formataPreco } from '@/utils/currencyUtils';
+const valorTotal = ref(valorAltera())
 </script>
 
 <template>
-  <div class="summary bg-background">
+  <div class="summary w-100 h-100 bg-background flex flex-col justify-between" >
     <h3>Total da Compra</h3>
-    <div class="flex flex-col justify-evenly h-full">
-      <div>Produtos:</div>
-      <div>Frete: R$ 0,00</div>
+    <div class="linha"></div>
+    <div>Produtos: {{ formataPreco(valorTotal) }}</div>
+    <div class="linha"></div>
+    <div>Frete: R$ 0,00</div>
+    <div class="linha"></div>
+    <div class="flex flex-col justify-end h-full">
+        <div class="linha"></div>
+        <h3>Total:  {{ formataPreco(valorTotal) }}</h3>
        <Button variant="outline" class="w-full">Ir Ao Pagamento</Button>
     </div>
   </div>
@@ -19,7 +25,17 @@ const carrinhos = ref(carrinho)
 <style scoped>
 .summary {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding: 2rem 5rem;
+  padding: 2rem;
+}
+
+.linha {
+  margin: .5rem 0;
+  padding: .5px;
+  background: rgb(116, 116, 116);
+}
+
+h3 {
+  margin: 0 0 1rem 0;
 }
 
 button {

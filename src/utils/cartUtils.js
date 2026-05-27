@@ -48,14 +48,46 @@ function addCarrinho(idLivro, quantidade) {
       })
     }
   }
+  valorAltera()
   console.log(carrinho)
 }
+
+let valorTotal = 0
 
 function removeCarrinho(idLivro) {
   const livro = produtos.find((p) => p.id === idLivro)
   if (livro) {
     carrinho.splice(idLivro, 1)
   }
+  valorAltera()
 }
 
-export { carrinho, addCarrinho }
+function valorAltera() {
+  valorTotal = 0
+  for (const i of carrinho) {
+    valorTotal += i.precoTotal
+  }
+
+  return valorTotal
+}
+
+function diminuiQuantidade(idLivro) {
+  const livro = produtos.find((p) => p.id === idLivro)
+  livro.quantidade -= 1
+  valorAltera()
+}
+
+function aumentaQuantidade(idLivro) {
+  const livro = produtos.find((p) => p.id === idLivro)
+    if (livro) {
+    const itemExistente = carrinho.find((item) => item.id === idLivro)
+    if (itemExistente) {
+      itemExistente.quantidade += 1
+    }
+  }
+  valorAltera()
+}
+
+valorAltera()
+
+export { carrinho, addCarrinho, removeCarrinho, valorAltera, diminuiQuantidade, aumentaQuantidade }
