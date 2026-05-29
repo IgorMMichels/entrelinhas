@@ -8,10 +8,10 @@ const listaProdutos = ref(produtos)
 const route = useRoute()
 
 const produtosFiltrados = computed(() => {
-  const search = (route.query.search || '')
+  const search = String(route.query.search || '').toLowerCase()
 
   return listaProdutos.value.filter(produto =>
-    produto.titulo.includes(search)
+    produto.titulo.toLowerCase().includes(search)
   )
 })
 </script>
