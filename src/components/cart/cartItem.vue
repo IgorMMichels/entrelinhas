@@ -17,9 +17,9 @@ defineEmits(['aumentaQuantidade', 'diminuiQuantidade'])
       <p class="w-60">{{ resenha }}</p>
     </div>
     <div class="items-center">
-      <ButtonGroup @click="$emit('aumentaQuantidade')">
-        <Button  >
-          <MinusIcon/>
+      <ButtonGroup>
+        <Button  @click="$emit('aumentaQuantidade')" >
+          <MinusIcon @click="$emit('aumentaQuantidade')"/>
         </Button>
         <ButtonGroupText class="min-w-16 justify-center rounded-none text-center bg-background"
           >{{ quantidade }}</ButtonGroupText
