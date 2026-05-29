@@ -9,6 +9,9 @@ import { Button } from '@/components/ui/button'
 import { ButtonGroup } from '@/components/ui/button-group'
 import { Input } from '@/components/ui/input'
 import { SearchIcon } from 'lucide-vue-next'
+import { ref } from 'vue'
+const search = ref('')
+
 </script>
 
 <template>
@@ -18,8 +21,8 @@ import { SearchIcon } from 'lucide-vue-next'
     </div>
     <div>
       <ButtonGroup>
-        <Input placeholder="Pesquisar" />
-        <Button variant="outline" class='bg-background' aria-label="Search">
+        <Input placeholder="Pesquisar" v-model="search"/>
+        <Button variant="outline" class='bg-background' aria-label="Search" @click="$router.replace('/'+'?search='+search)" >
           <SearchIcon color="#4b0001" />
         </Button>
       </ButtonGroup>
