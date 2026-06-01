@@ -29,13 +29,14 @@ button {
 
 button:hover {
   transform: translateY(-3px);
-    box-shadow: rgb(117, 5, 5, 0.5) 0px 5px 15px;
+  box-shadow: rgb(117, 5, 5, 0.5) 0px 5px 15px;
 }
-  
 
 .banner {
-  margin: 2rem 0;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
+  margin: 2rem 0;
   padding: 3rem 5rem;
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -51,11 +52,43 @@ h2 {
 
 h4 {
   color: #750505;
-  margin: 1rem 15rem 3rem 0 ;
+  margin: 1rem 15rem 3rem 0;
   font-size: 27px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
 }
-img {margin: 0 1rem 0 3rem;}
+
+img {
+  margin: 0 1rem 0 3rem;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 38px;
+    text-align: center;
+    width: 100%;
+  }
+
+  h4 {
+    font-size: 17px;
+    margin: 1rem 2rem 2rem 2rem;
+  }
+
+  img {
+    margin: 1.5rem 0 0 0;
+    width: 100%;
+  }
+
+  button{
+    width: 100%;
+  }
+  }
+
 
 </style>

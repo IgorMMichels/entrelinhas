@@ -9,7 +9,6 @@ import appFooter from '@/components/layout/appFooter.vue';
   <appHeader></appHeader>
   <BannerSite></BannerSite>
   <ProductList></ProductList>
-  <appFooter></appFooter>
 </template>
 
 <style scoped>

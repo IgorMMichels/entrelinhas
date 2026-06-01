@@ -57,6 +57,7 @@ a {
 input {
   width: 400px;
 }
+
 header {
   display: flex;
   justify-content: space-between;
@@ -82,4 +83,30 @@ img {
 button {
   background-color: #fbf5f0;
 }
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    margin: 0 1rem 1.5rem 1rem;
+    gap: 0.75rem;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  svg {
+    width: 80%;
+  }
+
+  img {
+    width: 20%;
+  }
+
+  input {
+    width: 80px;
+  }
+}
+
+
 </style>
