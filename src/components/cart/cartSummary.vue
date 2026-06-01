@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
 import Button from '../ui/button/Button.vue';
-import { valorAltera } from '@/utils/cartUtils';
+import { carrinho } from '@/utils/cartUtils';
 import { formataPreco } from '@/utils/currencyUtils';
-const valorTotal = ref(valorAltera())
+const valorTotal = computed(() =>
+  carrinho.value.reduce((total, item) => total + item.precoTotal, 0)
+)
 </script>
 
 <template>
