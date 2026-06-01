@@ -64,11 +64,17 @@ function valorAltera() {
 
 function diminuiQuantidade(idLivro) {
   const livro = produtos.find((p) => p.id === idLivro)
+  const index = carrinho.value.findIndex((item) => item.id === idLivro)
   if (livro) {
     const itemExistente = carrinho.value.find((item) => item.id === idLivro)
     if (itemExistente) {
-      itemExistente.quantidade -= 1
-      itemExistente.precoTotal = itemExistente.quantidade * livro.preco
+      if (itemExistente.quantidade > 1) {
+        itemExistente.quantidade -= 1
+        itemExistente.precoTotal = itemExistente.quantidade * livro.preco
+      } else {
+
+        carrinho.value.splice(index, 1)
+      }
     }
   }
 }
