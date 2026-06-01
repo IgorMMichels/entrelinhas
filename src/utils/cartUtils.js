@@ -1,6 +1,7 @@
+import { ref } from 'vue'
 import produtos from "@/data/products"
 
-const carrinho = [
+const carrinho = ref([
   {
     "id": 1,
     "titulo": "Harry Potter e a Pedra Filosofal",
@@ -31,63 +32,70 @@ const carrinho = [
     "capa": "https://m.media-amazon.com/images/I/910MCHGXJcL.jpg",
     "precoTotal": 59.90
   },
-]
+])
 
 function addCarrinho(idLivro, quantidade) {
   const livro = produtos.find((p) => p.id === idLivro)
   if (livro) {
-    const itemExistente = carrinho.find((item) => item.id === idLivro)
+    const itemExistente = carrinho.value.find((item) => item.id === idLivro)
     if (itemExistente) {
       itemExistente.quantidade += quantidade
       itemExistente.precoTotal = itemExistente.quantidade * livro.preco
     } else {
-      carrinho.push({
+      carrinho.value.push({
         ...livro,
         quantidade,
         precoTotal: quantidade * livro.preco,
       })
     }
   }
-  valorAltera()
-  console.log(carrinho)
 }
 
-let valorTotal = 0
-
 function removeCarrinho(idLivro) {
-  const livro = produtos.find((p) => p.id === idLivro)
-  if (livro) {
-    carrinho.splice(idLivro, 1)
+  const index = carrinho.value.findIndex((item) => item.id === idLivro)
+  if (index !== -1) {
+    carrinho.value.splice(index, 1)
   }
-  valorAltera()
 }
 
 function valorAltera() {
-  valorTotal = 0
-  for (const i of carrinho) {
-    valorTotal += i.precoTotal
-  }
-
-  return valorTotal
+  return carrinho.value.reduce((total, item) => total + item.precoTotal, 0)
 }
 
 function diminuiQuantidade(idLivro) {
   const livro = produtos.find((p) => p.id === idLivro)
-  livro.quantidade -= 1
-  valorAltera()
+  const index = carrinho.value.findIndex((item) => item.id === idLivro)
+  if (livro) {
+    const itemExistente = carrinho.value.find((item) => item.id === idLivro)
+    if (itemExistente) {
+      if (itemExistente.quantidade > 1) {
+        itemExistente.quantidade -= 1
+        itemExistente.precoTotal = itemExistente.quantidade * livro.preco
+      } else {
+
+        carrinho.value.splice(index, 1)
+      }
+    }
+  }
 }
+
 
 function aumentaQuantidade(idLivro) {
   const livro = produtos.find((p) => p.id === idLivro)
-    if (livro) {
-    const itemExistente = carrinho.find((item) => item.id === idLivro)
+  if (livro) {
+    const itemExistente = carrinho.value.find((item) => item.id === idLivro)
     if (itemExistente) {
       itemExistente.quantidade += 1
+      itemExistente.precoTotal = itemExistente.quantidade * livro.preco
     }
   }
-  valorAltera()
 }
 
-valorAltera()
+function excluirProduto(idLivro) {
+  const index = carrinho.value.findIndex((item) => item.id === idLivro)
+  if (index !== -1) {
+    carrinho.value.splice(index, 1)
+  }
+}
 
-export { carrinho, addCarrinho, removeCarrinho, valorAltera, diminuiQuantidade, aumentaQuantidade }
+export { carrinho, addCarrinho, removeCarrinho, valorAltera, diminuiQuantidade, aumentaQuantidade, excluirProduto }

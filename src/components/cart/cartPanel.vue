@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import { carrinho } from '@/utils/cartUtils'
+import { carrinho, aumentaQuantidade, diminuiQuantidade, excluirProduto } from '@/utils/cartUtils'
 import cartItem from './cartItem.vue'
 import CartSummary from './cartSummary.vue'
-import { ref } from 'vue'
-import { aumentaQuantidade, diminuiQuantidade } from '@/utils/cartUtils'
-const carrinhos = ref(carrinho)
 </script>
 
 <template>
@@ -17,7 +14,7 @@ const carrinhos = ref(carrinho)
       </div>
       <div class="flex flex-col justify-center">
       <cartItem
-        v-for="produto in carrinhos"
+        v-for="produto in carrinho"
         :key="produto.id"
         :capa="produto.capa"
         :titulo="produto.titulo"
@@ -27,6 +24,7 @@ const carrinhos = ref(carrinho)
         :quantidade="produto.quantidade"
         @aumenta-quantidade="aumentaQuantidade(produto.id)"
         @diminui-quantidade="diminuiQuantidade(produto.id)"
+        @exclui-produto="excluirProduto(produto.id)"
       >
       </cartItem>
       </div>

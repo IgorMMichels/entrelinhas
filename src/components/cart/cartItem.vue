@@ -5,7 +5,7 @@ import { MinusIcon, PlusIcon, Trash2Icon } from 'lucide-vue-next'
 defineProps(['id', 'autor', 'titulo', 'resenha', 'preco', 'capa', 'quantidade'])
 import Button from '@/components/ui/button/Button.vue'
 import { formataPreco } from '@/utils/currencyUtils'
-defineEmits(['aumentaQuantidade', 'diminuiQuantidade'])
+defineEmits(['aumentaQuantidade', 'diminuiQuantidade', 'excluiProduto'])
 </script>
 
 <template>
@@ -18,8 +18,8 @@ defineEmits(['aumentaQuantidade', 'diminuiQuantidade'])
     </div>
     <div class="items-center">
       <ButtonGroup>
-        <Button  @click="$emit('aumentaQuantidade')" >
-          <MinusIcon @click="$emit('aumentaQuantidade')"/>
+        <Button  @click="$emit('diminuiQuantidade')" >
+          <MinusIcon />
         </Button>
         <ButtonGroupText class="min-w-16 justify-center rounded-none text-center bg-background"
           >{{ quantidade }}</ButtonGroupText
@@ -30,7 +30,7 @@ defineEmits(['aumentaQuantidade', 'diminuiQuantidade'])
       </ButtonGroup>
     </div>
     <div class=" flex justify-between gap-5 items-center">
-       <Button>
+       <Button @click="$emit('excluiProduto')">
         <Trash2Icon />
        </Button>
        <h4>{{ formataPreco(preco) }}</h4>
