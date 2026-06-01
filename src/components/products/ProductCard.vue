@@ -9,7 +9,7 @@ defineEmits(['adicionarCarrinho'])
 </script>
 
 <template>
-  <Card class="grid grow w-full max-w-sm m-0 p-0 overflow-hidden">
+  <Card class="flex flex-col justify-between grow w-full max-w-sm m-0 p-0 overflow-hidden">
     <img
       :src="capa"
       alt=""
