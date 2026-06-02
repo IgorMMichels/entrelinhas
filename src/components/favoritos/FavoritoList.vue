@@ -3,8 +3,8 @@ import { computed, ref } from 'vue'
 import produtos from '@/data/products'
 import { addCarrinho } from '@/utils/cartUtils'
 import { useRoute } from 'vue-router'
-import ProductCard from './ProductCard.vue'
 import { addFavorito, favoritos, removeFavorito } from '@/utils/favoriteHandler.js'
+import ProductCard from '../products/ProductCard.vue'
 const listaProdutos = ref(favoritos)
 const route = useRoute()
 
@@ -28,6 +28,7 @@ const produtosFiltrados = computed(() => {
       :autor="produto.autor"
       :resenha="produto.resenha"
       :favorito="produto.favorito"
+      v-show="produto.favorito"
       @adicionar-carrinho="addCarrinho(produto.id, 1)"
       @remove-favorito="removeFavorito(produto.id)"
       @add-favorito="addFavorito(produto.id)"

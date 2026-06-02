@@ -17,11 +17,11 @@ const search = ref('')
 <template>
   <header>
     <div>
-      <img @click="$router.push('/')" src="/logoentrelinhas.png" alt="icon" />
+      <img @click="$router.push('/')" src="/logoentrelinhas.png"  alt="icon" />
     </div>
     <div>
       <ButtonGroup>
-        <Input placeholder="Pesquisar" v-model="search"/>
+        <Input placeholder="Pesquisar" v-model="search" @keyup.enter="$router.replace('/'+'?search='+search)"/>
         <Button variant="outline" class='bg-background' aria-label="Search" @click="$router.replace('/'+'?search='+search)" >
           <SearchIcon color="#4b0001" />
         </Button>
@@ -39,7 +39,7 @@ const search = ref('')
       <router-link to="/carrinho">
         <HugeiconsIcon :icon="ShoppingCart02Icon" color="#4b0001" style="cursor: pointer" />
       </router-link>
-      <router-link to="/carrinho">
+      <router-link to="/favoritos">
         <HugeiconsIcon :icon="FavouriteIcon" color="#4b0001" style="cursor: pointer" />
       </router-link>
       <router-link to="/carrinho">
