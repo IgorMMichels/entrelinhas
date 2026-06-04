@@ -1,20 +1,18 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import produtos from '@/data/products'
+import { computed } from 'vue'
 import { addCarrinho } from '@/utils/cartUtils'
 import { useRoute } from 'vue-router'
-import { addFavorito, favoritos, removeFavorito } from '@/utils/favoriteHandler.js'
 import ProductCard from '../products/ProductCard.vue'
-const listaProdutos = ref(favoritos)
+import { addFavorito, produtos, removeFavorito } from '@/data/products.js'
 const route = useRoute()
 
 const produtosFiltrados = computed(() => {
   const search = String(route.query.search || '').toLowerCase()
-
-  return listaProdutos.value.filter(produto =>
-    produto.titulo.toLowerCase().includes(search)
-  )
+  
+  return produtos.value.filter((produto) => produto.titulo.toLowerCase().includes(search))
 })
+
+const temFavoritos = computed(() => produtosFiltrados.value.some((p) => p.favorito))
 </script>
 
 <template>
@@ -34,4 +32,7 @@ const produtosFiltrados = computed(() => {
       @add-favorito="addFavorito(produto.id)"
     ></ProductCard>
   </div>
+  <p v-if="!temFavoritos" class="text-center w-full">
+    Nenhum favorito encontrado
+  </p>
 </template>

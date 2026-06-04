@@ -1,5 +1,5 @@
+import { produtos } from '@/data/products'
 import { ref } from 'vue'
-import produtos from "@/data/products"
 
 const carrinho = ref([
   {
@@ -15,7 +15,7 @@ const carrinho = ref([
 ])
 
 function addCarrinho(idLivro, quantidade) {
-  const livro = produtos.find((p) => p.id === idLivro)
+  const livro = produtos.value.find((p) => p.id === idLivro)
   if (livro) {
     const itemExistente = carrinho.value.find((item) => item.id === idLivro)
     if (itemExistente) {
@@ -43,7 +43,7 @@ function valorAltera() {
 }
 
 function diminuiQuantidade(idLivro) {
-  const livro = produtos.find((p) => p.id === idLivro)
+  const livro = produtos.value.find((p) => p.id === idLivro)
   const index = carrinho.value.findIndex((item) => item.id === idLivro)
   if (livro) {
     const itemExistente = carrinho.value.find((item) => item.id === idLivro)
@@ -61,7 +61,7 @@ function diminuiQuantidade(idLivro) {
 
 
 function aumentaQuantidade(idLivro) {
-  const livro = produtos.find((p) => p.id === idLivro)
+  const livro = produtos.value.find((p) => p.id === idLivro)
   if (livro) {
     const itemExistente = carrinho.value.find((item) => item.id === idLivro)
     if (itemExistente) {
