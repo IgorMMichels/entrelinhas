@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import Button from '../ui/button/Button.vue'
+
+function scrollToProdutos() {
+  document.getElementById('produtos')?.scrollIntoView({ behavior: 'smooth' })
+}
 </script>
 
 <template>
@@ -10,13 +14,13 @@ import Button from '../ui/button/Button.vue'
         O portal para os seus novos mundos literários. O universo dos seus autores favoritos a
         apenas um clique de distância.
       </h4>
-      <Button class="w-100 to-background">Acessar Livros</Button>
+      <Button class="w-100 to-background" @click="scrollToProdutos">Acessar Livros</Button>
     </div>
     <div>
       <img src="/banner.png" alt="">
     </div>
   </div>
-  
+
 </template>
 
 <style scoped>
@@ -31,7 +35,7 @@ button:hover {
   transform: translateY(-3px);
     box-shadow: rgb(117, 5, 5, 0.5) 0px 5px 15px;
 }
-  
+
 
 .banner {
   margin: 2rem 0;

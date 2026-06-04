@@ -5,11 +5,15 @@ import CartSummary from './cartSummary.vue'
 </script>
 
 <template>
-  <div class="min-h-50 panel  flex items-start justify-between bg-background">
+  <div class="min-h-50 panel flex items-start justify-between bg-background">
     <div class="flex-1">
       <h3>Carrinho</h3>
       <div class="pt-5 pr-10 flex justify-between">
         <h4>Produto</h4>
+        <h4 v-if="carrinho.length === 0" class="center">
+          Nenhum produto encontrado no carrinho
+        </h4>
+
         <h4>Total</h4>
       </div>
 
