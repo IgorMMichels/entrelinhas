@@ -10,14 +10,12 @@ const route = useRoute()
 const produtosFiltrados = computed(() => {
   const search = String(route.query.search || '').toLowerCase()
 
-  return listaProdutos.filter(produto =>
-    produto.titulo.toLowerCase().includes(search)
-  )
+  return listaProdutos.filter((produto) => produto.titulo.toLowerCase().includes(search))
 })
 </script>
 
 <template>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 produtos">
     <ProductCard
       v-for="produto in produtosFiltrados"
       :key="produto.id - 1"
@@ -32,4 +30,9 @@ const produtosFiltrados = computed(() => {
       @add-favorito="addFavorito(produto.id)"
     ></ProductCard>
   </div>
+      <p v-if="produtosFiltrados.length === 0" class="text-center w-full">
+      Nenhum produto encontrado
+    </p>
 </template>
+
+<style scoped></style>
