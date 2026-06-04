@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import produtos from '@/data/products'
 import { addCarrinho } from '@/utils/cartUtils'
 import { useRoute } from 'vue-router'
-import { addFavorito, favoritos, removeFavorito } from '@/utils/favoriteHandler.js'
 import ProductCard from '../products/ProductCard.vue'
-const listaProdutos = ref(favoritos)
+import { addFavorito, produtos, removeFavorito } from '@/data/products.js'
+const listaProdutos = ref(produtos)
 const route = useRoute()
 
 const produtosFiltrados = computed(() => {
