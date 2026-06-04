@@ -12,26 +12,6 @@ const carrinho = ref([
     "capa": "https://a-static.mlcdn.com.br/%7Bw%7Dx%7Bh%7D/livro-harry-potter-e-a-pedra-filosofal-capa-dura-edicao-comemorativa-dos-20-anos-da-colecao-harry-potter/magazineluiza/225550000/82b6af40e5078ec116a26f58ba309185.jpg",
     "precoTotal": 69.90
   },
-  {
-    "id": 5,
-    "titulo": "O Príncipe Cruel",
-    "autor": "Holly Black",
-    "resenha": "Romance de fantasia sombria repleto de intrigas políticas e traições, focado na luta de uma jovem humana para sobreviver e conquistar poder entre as criaturas cruéis do reino das fadas.",
-    "preco": 59.90,
-    "quantidade": 2,
-    "capa": "https://m.media-amazon.com/images/I/81FH6q0EqYS._AC_UF1000,1000_QL80_.jpg",
-    "precoTotal": 119.60
-  },
-   {
-    "id": 8,
-    "titulo": "O Canto Mais Escuro da Floresta",
-    "autor": "Holly Black",
-    "resenha": "Fantasia urbana sombria que mistura folclore celta e romance, onde dois irmãos tentam quebrar uma maldição ancestral em uma cidadezinha cercada por fadas perigosas.",
-    "preco": 59.90,
-    "quantidade": 1,
-    "capa": "https://m.media-amazon.com/images/I/910MCHGXJcL.jpg",
-    "precoTotal": 59.90
-  },
 ])
 
 function addCarrinho(idLivro, quantidade) {
