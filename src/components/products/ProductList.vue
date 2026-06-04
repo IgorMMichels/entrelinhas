@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import produtos from '@/data/products'
-import { addCarrinho } from '@/utils/cartUtils'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import ProductCard from './ProductCard.vue'
-import { addFavorito, favoritos, removeFavorito } from '@/utils/favoriteHandler.js'
-const listaProdutos = ref(favoritos)
+import { addFavorito, produtos, removeFavorito } from '@/data/products.js'
+import { addCarrinho } from '@/utils/cartUtils.js'
+const listaProdutos = produtos.value
 const route = useRoute()
 
 const produtosFiltrados = computed(() => {
   const search = String(route.query.search || '').toLowerCase()
 
-  return listaProdutos.value.filter(produto =>
+  return listaProdutos.filter(produto =>
     produto.titulo.toLowerCase().includes(search)
   )
 })
