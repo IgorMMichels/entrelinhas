@@ -1,15 +1,17 @@
 <script setup>
- import appHeader from '@/components/appHeader.vue';
-</script>
+import appHeader from '@/components/layout/appHeader.vue';
+import BannerSite from '@/components/layout/BannerSite.vue';
+import ProductList from '@/components/products/ProductList.vue';
+import appFooter from '@/components/layout/appFooter.vue';
+ </script>
 
 <template>
   <appHeader></appHeader>
-  <div>
-    <h2>BEM VINDO A LOJINHA BONITA</h2>
-  </div>
+  <BannerSite></BannerSite>
+  <ProductList></ProductList>
+  <appFooter></appFooter>
 </template>
 
 <style scoped>
-
 </style>
 

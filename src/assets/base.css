@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+
 @font-face {
   font-family: 'Moder Demo';
   src: url(/src/assets/fonts/TBJ-Moder-Demo.ttf);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@font-face {
+  font-family: 'Reverie';
+  src: url(/src/assets/fonts/REVERIE.otf);
+}
 
 
 *,
@@ -14,11 +20,11 @@
   font-weight: normal;
   text-decoration: none;
   list-style-type: none;
-  background-color: #fdf9f4;
 }
 
-a, h1, h2, h3, h4, p, input, label {
-  color: #20201d;
+
+body   {
+    background-color: #faf4f0;
 }
 
 div {
