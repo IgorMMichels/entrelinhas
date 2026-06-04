@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import Button from '../ui/button/Button.vue';
 import { carrinho } from '@/utils/cartUtils';
 import { formataPreco } from '@/utils/currencyUtils';
+import { comingSoon } from '@/utils/comingSoon.js';
 const valorTotal = computed(() =>
   carrinho.value.reduce((total, item) => total + item.precoTotal, 0)
 )
@@ -19,7 +20,7 @@ const valorTotal = computed(() =>
     <div class="flex flex-col justify-end h-full">
         <div class="linha"></div>
         <h3>Total:  {{ formataPreco(valorTotal) }}</h3>
-       <Button variant="outline" class="w-full">Ir Ao Pagamento</Button>
+       <Button variant="outline" class="w-full" @click="comingSoon()">Ir Ao Pagamento</Button>
     </div>
   </div>
 </template>
