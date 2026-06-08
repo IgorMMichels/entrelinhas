@@ -5,7 +5,7 @@ import CartSummary from './cartSummary.vue'
 </script>
 
 <template>
-  <div class="min-h-50 panel flex items-start justify-between bg-background">
+  <div class="min-h-50 panel flex items-start justify-between bg-background principal">
     <div class="flex-1">
       <h3>Carrinho</h3>
       <div class="pt-5 pr-10 flex justify-between">
@@ -13,11 +13,9 @@ import CartSummary from './cartSummary.vue'
         <h4 v-if="carrinho.length === 0" class="center">
           Nenhum produto encontrado no carrinho
         </h4>
-
-        <h4>Total</h4>
       </div>
 
-      <div class="flex flex-col justify-center">
+      <div class="flex flex-col justify-center cards">
         <cartItem
           v-for="produto in carrinho"
           :key="produto.id"
@@ -41,7 +39,26 @@ import CartSummary from './cartSummary.vue'
 <style scoped>
 .panel {
   padding: 1rem 2rem;
-  margin: auto 5rem;
+  margin: 1rem 5rem;
+
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .panel {
+    margin: 1rem 0;
+  }
+  .cards {
+    display: block;
+  }
+  div {
+    width: 100%;
+  }
+
+  .principal {
+    width: 100%;
+    display: block;
+  }
 }
 </style>

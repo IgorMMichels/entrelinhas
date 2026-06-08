@@ -9,12 +9,13 @@ defineEmits(['aumentaQuantidade', 'diminuiQuantidade', 'excluiProduto'])
 </script>
 
 <template>
-  <div class="w-250 h-full pb-10 flex justify-between items-center">
+  <div class="w-250 h-full pb-10 flex gap-6 justify-between items-center card">
     <img class="h-70 object-cover rounded-md" :src="capa" alt="">
     <div class="info h-75 flex flex-col justify-evenly">
       <h3 class="text-2xl">{{ titulo }}</h3>
       <h4 class="">{{ autor }}</h4>
       <p class="w-60">{{ resenha }}</p>
+      <h4 class="precoCel hidden">{{ formataPreco(preco) }}</h4>
     </div>
     <div class="items-center">
       <ButtonGroup>
@@ -29,14 +30,42 @@ defineEmits(['aumentaQuantidade', 'diminuiQuantidade', 'excluiProduto'])
         </Button>
       </ButtonGroup>
     </div>
-    <div class=" flex justify-between gap-5 items-center">
+
+    <div class="flex justify-between gap-5 items-center botaos">
        <Button @click="$emit('excluiProduto')">
         <Trash2Icon />
        </Button>
-       <h4>{{ formataPreco(preco) }}</h4>
+       <h4 class="precoPc">{{ formataPreco(preco) }}</h4>
     </div>
   </div>
 </template>
 
 <style scoped>
+@media screen and (max-width: 768px) {
+
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .precoCel {
+    display: block;
+    font-size: 20px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .botaos {
+    display: block;
+    margin: 1rem 0;
+  }
+  .precoPc {
+    display: none;
+  }
+
+
+  }
 </style>

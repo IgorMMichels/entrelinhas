@@ -10,7 +10,7 @@ const valorTotal = computed(() =>
 </script>
 
 <template>
-  <div class="summary w-100 h-100 bg-background flex flex-col justify-between" >
+  <div class="summary w-100 h-100 bg-background flex flex-col justify-between card" >
     <h3>Total da Compra</h3>
     <div class="linha"></div>
     <div>Produtos: {{ formataPreco(valorTotal) }}</div>
@@ -52,5 +52,12 @@ button {
 button:hover {
   transform: translateY(-3px);
   box-shadow: rgba(173, 255, 172, 0.8) 0px 5px 15px;
+}
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+
+
 }
 </style>

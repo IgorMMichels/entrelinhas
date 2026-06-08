@@ -21,7 +21,7 @@ const search = ref('')
       <img @click="$router.push('/')" src="/logoentrelinhas.png"  alt="icon" />
     </div>
     <div>
-      <ButtonGroup>
+      <ButtonGroup class="inputButton">
         <Input placeholder="Pesquisar" v-model="search" @keyup.enter="$router.replace('/'+'?search='+search)"/>
         <Button variant="outline" class='bg-background' aria-label="Search" @click="$router.replace('/'+'?search='+search)" >
           <SearchIcon color="#4b0001" />
@@ -58,6 +58,7 @@ a {
 input {
   width: 400px;
 }
+
 header {
   display: flex;
   justify-content: space-between;
@@ -83,4 +84,39 @@ img {
 button {
   background-color: #fbf5f0;
 }
+
+@media screen and (max-width: 768px) {
+  header {
+    margin: 0rem;
+    display: flex;
+    gap: 0rem;
+    justify-content: center;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  svg {
+    width: 20px;
+  }
+
+  .iconTools {
+    gap: 6px;
+  }
+
+  img {
+    width: 80px;
+  }
+
+  input {
+    width: 120px;
+  }
+
+  .inputButton {
+    margin: 0 1rem;
+  }
+}
+
+
 </style>
