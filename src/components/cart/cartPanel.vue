@@ -8,9 +8,9 @@ import CartSummary from './cartSummary.vue'
   <div class="min-h-50 panel flex items-start justify-between bg-background principal">
     <div class="flex-1">
       <h3>Carrinho</h3>
-      <div class="pt-5 pr-10 flex justify-between">
-        <h4>Produto</h4>
-        <h4 v-if="carrinho.length === 0" class="center">
+      <div class="pt-5 pr-10 flex justify-between informacoes">
+        <h4 class="produto">Produto</h4>
+        <h4 v-if="carrinho.length === 0" class="center nenhum">
           Nenhum produto encontrado no carrinho
         </h4>
       </div>
@@ -43,6 +43,9 @@ import CartSummary from './cartSummary.vue'
 
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+  .produto {
+    display: none;
+  }
 
 @media screen and (max-width: 768px) {
 
@@ -60,5 +63,22 @@ import CartSummary from './cartSummary.vue'
     width: 100%;
     display: block;
   }
+
+  .informacoes {
+    text-align: center;
+    display: block;
+    margin: 2rem auto;
+    padding: 0;
+
+  }
+
+  .produto {
+    display: none;
+  }
+
+  .nenhum {
+    font-size: 18px;
+  }
+
 }
 </style>
