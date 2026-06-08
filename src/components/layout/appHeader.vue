@@ -10,6 +10,7 @@ import { ButtonGroup } from '@/components/ui/button-group'
 import { Input } from '@/components/ui/input'
 import { SearchIcon } from 'lucide-vue-next'
 import { ref } from 'vue'
+import { comingSoon } from '@/utils/comingSoon'
 const search = ref('')
 
 </script>
@@ -29,10 +30,10 @@ const search = ref('')
     </div>
     <div>
       <nav>
-        <RouterLink to="/">Termos</RouterLink>
-        <RouterLink to="/">Equipe</RouterLink>
-        <RouterLink to="/">Envio</RouterLink>
-        <RouterLink to="/">Devoluções</RouterLink>
+        <RouterLink to="/" @click="comingSoon()">Termos</RouterLink>
+        <RouterLink to="/" @click="comingSoon()">Equipe</RouterLink>
+        <RouterLink to="/" @click="comingSoon()">Envio</RouterLink>
+        <RouterLink to="/" @click="comingSoon()">Devoluções</RouterLink>
       </nav>
     </div>
     <div class="iconTools">
