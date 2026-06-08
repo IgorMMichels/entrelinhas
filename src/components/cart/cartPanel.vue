@@ -43,9 +43,6 @@ import CartSummary from './cartSummary.vue'
 
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-  .produto {
-    display: none;
-  }
 
 @media screen and (max-width: 768px) {
 
