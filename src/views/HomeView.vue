@@ -7,10 +7,11 @@ import appFooter from '@/components/layout/appFooter.vue';
 
 <template>
   <appHeader></appHeader>
+  <main></main>
   <BannerSite></BannerSite>
   <ProductList></ProductList>
-  <appFooter>
-    
+  <appFooter class="mt-auto">
+
   </appFooter>
 </template>
 
