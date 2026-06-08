@@ -13,8 +13,6 @@ import CartSummary from './cartSummary.vue'
         <h4 v-if="carrinho.length === 0" class="center">
           Nenhum produto encontrado no carrinho
         </h4>
-
-        <h4>Total</h4>
       </div>
 
       <div class="flex flex-col justify-center">
