@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { Card } from '@/components/ui/card'
 import Button from '../ui/button/Button.vue'
-defineProps(['id', 'autor', 'titulo', 'resenha', 'preco', 'capa'])
+defineProps(['id', 'autor', 'titulo', 'resenha', 'preco', 'capa', 'favorito'])
 import { HugeiconsIcon } from '@hugeicons/vue'
 import { Heart } from '@hugeicons/core-free-icons'
 import { formataPreco } from '@/utils/currencyUtils'
-defineEmits(['adicionarCarrinho'])
+defineEmits(['adicionarCarrinho', 'addFavorito', 'removeFavorito'])
 </script>
 
 <template>
-  <Card class="grid grow w-full max-w-sm m-0 p-0 overflow-hidden">
+  <Card class="flex flex-col justify-between grow w-full max-w-sm m-0 p-0 overflow-hidden">
     <img
       :src="capa"
       alt=""
@@ -19,7 +19,8 @@ defineEmits(['adicionarCarrinho'])
       <h1>{{ titulo }}</h1>
       <div class="w-full flex justify-between">
         <h4> {{ autor }}</h4>
-        <HugeiconsIcon :icon="Heart" color="#4b0001" style="cursor: pointer" />
+        <HugeiconsIcon :icon="Heart" color="#4b0001" style="cursor: pointer" @click="$emit('addFavorito')" v-if="favorito == false" />
+        <HugeiconsIcon :icon="Heart" color="#4b0001" fill="#4b0001" style="cursor: pointer" @click="$emit('removeFavorito')" v-show="favorito"/>
       </div>
       <h4 class='price'>{{ formataPreco(preco) }}</h4>
       <h3> {{ resenha }} </h3>

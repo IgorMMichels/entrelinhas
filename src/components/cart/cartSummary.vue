@@ -1,13 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
 import Button from '../ui/button/Button.vue';
-import { valorAltera } from '@/utils/cartUtils';
+import { carrinho } from '@/utils/cartUtils';
 import { formataPreco } from '@/utils/currencyUtils';
-const valorTotal = ref(valorAltera())
+import { comingSoon } from '@/utils/comingSoon.js';
+const valorTotal = computed(() =>
+  carrinho.value.reduce((total, item) => total + item.precoTotal, 0)
+)
 </script>
 
 <template>
-  <div class="summary w-100 h-100 bg-background flex flex-col justify-between" >
+  <div class="summary w-100 h-100 bg-background flex flex-col justify-between card" >
     <h3>Total da Compra</h3>
     <div class="linha"></div>
     <div>Produtos: {{ formataPreco(valorTotal) }}</div>
@@ -17,7 +20,7 @@ const valorTotal = ref(valorAltera())
     <div class="flex flex-col justify-end h-full">
         <div class="linha"></div>
         <h3>Total:  {{ formataPreco(valorTotal) }}</h3>
-       <Button variant="outline" class="w-full">Ir Ao Pagamento</Button>
+       <Button variant="outline" class="w-full" @click="comingSoon()">Ir Ao Pagamento</Button>
     </div>
   </div>
 </template>
@@ -49,5 +52,12 @@ button {
 button:hover {
   transform: translateY(-3px);
   box-shadow: rgba(173, 255, 172, 0.8) 0px 5px 15px;
+}
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+
+
 }
 </style>

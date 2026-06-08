@@ -1,7 +1,8 @@
-import { ref } from "vue"
+import { ref } from 'vue'
+import produtos from "@/data/products"
 
 
-const produtos = ref([{
+const favoritos = ref([{
     "id": 1,
     "titulo": "Harry Potter e a Pedra Filosofal",
     "autor": "J.K. Rowling",
@@ -111,13 +112,13 @@ const produtos = ref([{
   }])
 
 function addFavorito(idLivro) {
-  const index = produtos.value.findIndex((item) => item.id === idLivro)
-  produtos.value[index].favorito = true
+  const index = favoritos.value.findIndex((item) => item.id === idLivro)
+  favoritos.value[index].favorito = true
 }
 
 function removeFavorito(idLivro) {
-  const index = produtos.value.findIndex((item) => item.id === idLivro)
-  produtos.value[index].favorito = false
+  const index = favoritos.value.findIndex((item) => item.id === idLivro)
+  favoritos.value[index].favorito = false
 }
 
-export { produtos, addFavorito, removeFavorito}
+export { favoritos, addFavorito, removeFavorito}
