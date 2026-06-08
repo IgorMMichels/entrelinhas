@@ -31,5 +31,25 @@
     width: 100px;
     cursor: pointer;
   }
+  @media screen and (max-width: 768px) {
+
+    footer {
+      margin: 2rem 0 0 0;
+    }
+
+    nav {
+      display: none;
+    }
+
+    h4 {
+      text-align: center;
+      margin: 0 2rem;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
 
 </style>
