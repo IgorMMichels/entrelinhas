@@ -10,6 +10,7 @@ import CartSummary from './cartSummary.vue'
       <h3>Carrinho</h3>
       <div class="pt-5 pr-10 flex justify-between informacoes">
         <h4 class="produto">Produto</h4>
+        <div></div>
         <h4 v-if="carrinho.length === 0" class="center nenhum">
           Nenhum produto encontrado no carrinho
         </h4>
