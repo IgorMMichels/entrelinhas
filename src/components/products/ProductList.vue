@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import ProductCard from './ProductCard.vue'
 import { addFavorito, produtos, removeFavorito } from '@/data/products.js'
 import { addCarrinho } from '@/utils/cartUtils.js'
 const listaProdutos = produtos.value
 const route = useRoute()
+
+const gridRef = ref(null)
+defineExpose({ gridRef })
 
 const produtosFiltrados = computed(() => {
   const search = String(route.query.search || '').toLowerCase()
@@ -15,7 +18,7 @@ const produtosFiltrados = computed(() => {
 </script>
 
 <template>
-  <div id="produtos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  <div ref="gridRef" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     <ProductCard
       v-for="produto in produtosFiltrados"
       :key="produto.id - 1"
