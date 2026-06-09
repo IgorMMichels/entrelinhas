@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { addCarrinho } from '@/utils/cartUtils'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import ProductCard from '../products/ProductCard.vue'
 import { addFavorito, produtos, removeFavorito } from '@/data/products.js'
 import BannerSite from '../layout/BannerSite.vue'
 const route = useRoute()
+const router = useRouter()
 
 const produtosFiltrados = computed(() => {
   const search = String(route.query.search || '').toLowerCase()
@@ -35,6 +36,6 @@ const temFavoritos = computed(() => produtosFiltrados.value.some((p) => p.favori
   </div>
   <div v-if="!temFavoritos">
     <p class="text-center w-full">Nenhum favorito encontrado</p>
-    <BannerSite></BannerSite>
+    <BannerSite @scroll-to-produtos="router.push({ path: '/', hash: '#produtos' })"></BannerSite>
   </div>
 </template>
