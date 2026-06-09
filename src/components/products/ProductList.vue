@@ -18,7 +18,7 @@ const produtosFiltrados = computed(() => {
 </script>
 
 <template>
-  <div ref="gridRef" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  <div id="produtos" ref="gridRef" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     <ProductCard
       v-for="produto in produtosFiltrados"
       :key="produto.id - 1"
